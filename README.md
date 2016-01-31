@@ -1,2 +1,1 @@
-# oneone.github.io
-My Blog
+[maples]](http://maples.me/)

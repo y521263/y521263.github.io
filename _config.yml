@@ -1,21 +1,87 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title: maple Blog
+SEOTitle: maple's Blog | maples Blog
+header-img: img/home-bg.jpg
+email: linxiangshu@126.com
+description: "对MachineLearning DeepLearning感兴趣，其实我不懂的"
+keyword: MachineLearning, DeepLearning, C++, 算法, 个人网站, 互联网"
+url: "http://maples.me"
+baseurl: ""
+
+
+
+# SNS settings
+RSS: false
+github_username:  y521263
+instagram_username: y521263
+
 
 # Build settings
+highlighter: pygments
+permalink: pretty
+paginate: 50
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+# PAGINATION
+gems: [jekyll-paginate]
+paginate: 50
+paginate_path: "page:num"
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Duoshuo settings
+duoshuo_username: mrfu
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: c3407349cc1129e07d0c33c8714b6175
+# Google Analytics
+ga_track_id: 'UA-69471101-1'            # Format: UA-xxxxxx-xx
+ga_domain: mrfu
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "活泼 靠谱 好人 | 航模 马拉松 电影"
+sidebar-avatar: /img/avatar-mrfu.png     # use absolute URL.
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Friends
+friends: [
+    {
+        title: "林大神的博客(他是打酱油的)",
+        href: "http://maples.me/"
+    },{
+        title: "程序亦非猿的OnePiece",
+        href: "http://yifeiyuan.me/"
+    },{
+        title: "小鄧子 - 简书",
+        href: "http://www.jianshu.com/users/df40282480b4/latest_articles"
+    }
+]
+
