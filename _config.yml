@@ -61,7 +61,7 @@ ga_domain: mrfu
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "低大调 | 阅读 羽毛球 跑步 算法 MachineLearning DeepLearning"
-sidebar-avatar: /img/avatar-mrfu.png     # use absolute URL.
+sidebar-avatar: /img/maple-tx.png     # use absolute URL.
 
 
 
