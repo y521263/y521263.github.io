@@ -51,16 +51,16 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: c3407349cc1129e07d0c33c8714b6175
+#ba_track_id: c3407349cc1129e07d0c33c8714b6175
 # Google Analytics
-ga_track_id: 'UA-69471101-1'            # Format: UA-xxxxxx-xx
+#ga_track_id: 'UA-69471101-1'            # Format: UA-xxxxxx-xx
 ga_domain: mrfu
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "活泼 靠谱 好人 | 航模 马拉松 电影"
+sidebar-about-description: "低大调 | 阅读 羽毛球 跑步 算法 MachineLearning DeepLearning"
 sidebar-avatar: /img/avatar-mrfu.png     # use absolute URL.
 
 
@@ -74,14 +74,8 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "林大神的博客(他是打酱油的)",
-        href: "http://maples.me/"
-    },{
-        title: "程序亦非猿的OnePiece",
-        href: "http://yifeiyuan.me/"
-    },{
-        title: "小鄧子 - 简书",
-        href: "http://www.jianshu.com/users/df40282480b4/latest_articles"
+        title: "mrfu",
+        href: "http://mrfu.me/"
     }
 ]
 
