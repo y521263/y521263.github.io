@@ -42,7 +42,7 @@ func testPerson() {
 
 在说说特别的地方。
 
-``` Go
+``` go
 type Person1 struct {
 	Name string `json:"name"`
 	Age  string `json:"age"`
@@ -63,7 +63,7 @@ func testPerson1() {
 那么可以试试这样子。
 关于任意的json数据，在 Go 中可以理解为 <code>map[string]interface {}</code>,或者<code>[]interface {}</code> 后者对应数组。
 
-``` Go
+``` go
 func testInter(str string) {
 	var inter interface{}
 	err := json.Unmarshal([]byte(str), &inter)
