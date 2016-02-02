@@ -28,7 +28,7 @@ header-img: "img/home-bg.jpg"
 	</p>
 </div>
 
-<!--
+
 {% if site.duoshuo_username %}
     <div class="comment">
         <div class="ds-thread"
@@ -41,12 +41,12 @@ header-img: "img/home-bg.jpg"
         data-title="{{page.title}}"
         data-url="{{site.url}}/about/"></div>
     </div>
--->
 
 <!-- Duoshuo hacking -->
 <input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
 <script type="text/javascript">
     // dynamic User hacking by Hux
     var _user = document.getElementById('dsUser').value;
@@ -61,5 +61,6 @@ header-img: "img/home-bg.jpg"
          || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-<!-- 多说公共JS代码 end -->
+
 {% endif %}
+-->
