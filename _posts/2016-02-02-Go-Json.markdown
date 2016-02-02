@@ -11,9 +11,11 @@ tags:
 关于Go中对json的解析有点独特的地方。
 
 Go自带解析包，C++只能自己写，或者网上找库了 <code>:P</code>
+
 > import "encoding/json"
 
 首先看下最基本的用法，
+
 ``` Go
 type Person struct {
 	Name string
@@ -37,7 +39,9 @@ func testPerson() {
 	fmt.Println(string(str2))
 }
 ```
+
 在说说特别的地方。
+
 ``` Go
 type Person1 struct {
 	Name string `json:"name"`
@@ -49,6 +53,7 @@ func testPerson1() {
     ...
 
 ```
+
 这里的字符串的名字可以和定义的 <code>struct</code> 变量名不一致。那么这里有什么用途呢；一般来说 <code>struct</code> 的变量名首字母大写，方便在<code>struct</code>之外访问，如果不喜欢这种命名方式，非要用小写字母开头的字段名的话，可以用这种方式实现。
 
 再补充一点，关于命名方式，在Go中的 首字母大写的 函数名，变量名，可以在包外或者结构体外访问。如果是小写字母开头的函数名，包外是不能访问的，有种C++里<code>private</code>的感觉。这是我的理解，有误的话，欢迎指正。<code>：P</code>
@@ -91,7 +96,9 @@ func main() {
 	testInter("[{\"Name\":\"hello\",\"age\":\"15\"},{\"haha\":\"word\",\"test\":\"100\"}]")
 }
 ```
+
 输出：
+
 > map[Name:hello age:15]
 	arr: map[Name:hello age:15]
 	arr: map[haha:word test:100]
