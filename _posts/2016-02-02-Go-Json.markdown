@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "Go Json 解析"
+date:   2016-01-31 14:43:16 +0800
+categories: Go
+#header-img: "img/post-bg-js-module.jpg"
+tags:
+    - Go
+---
+
+关于Go中对json的解析有点独特的地方。
+
+Go自带解析包，C++只能自己写，或者网上找库了 <code>:P</code>
+> import "encoding/json"
+
+首先看下最基本的用法，
+``` Go
+type Person struct {
+	Name string
+	Age  string
+}
+func testPerson() {
+	str1 := "{\"Name\":\"hello\",\"Age\":\"15\"}"
+	var ret Person
+	//字符串转化为对象
+    err := json.Unmarshal([]byte(str1), &ret)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(ret)
+    
+    //数据对象转化为字符串
+	str2, err := json.Marshal(ret)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(string(str2))
+}
+```
+在说说特别的地方。
+``` Go
+type Person1 struct {
+	Name string `json:"name"`
+	Age  string `json:"age"`
+}
+func testPerson1() {
+	str1 := "{\"name\":\"hello\",\"age\":\"15\"}"
+	var ret Person1
+    ...
+
+```
+这里的字符串的名字可以和定义的 <code>struct</code> 变量名不一致。那么这里有什么用途呢；一般来说 <code>struct</code> 的变量名首字母大写，方便在<code>struct</code>之外访问，如果不喜欢这种命名方式，非要用小写字母开头的字段名的话，可以用这种方式实现。
+
+再补充一点，关于命名方式，在Go中的 首字母大写的 函数名，变量名，可以在包外或者结构体外访问。如果是小写字母开头的函数名，包外是不能访问的，有种C++里<code>private</code>的感觉。这是我的理解，有误的话，欢迎指正。<code>：P</code>
+
+那么在具体使用的时候，我发现会有点不太方便的地方就是，每次在做json解析的时候，我首先得知道数据的结构，也就是说有哪些字段我事先要知道。提前定义<code>struct</code>。如果每次字符串的数据结构会发生变化，而我只关心里面的某个字段，或者某个数据类型很复杂，层级很深，而我只需要一小部分的字段数据。
+
+那么可以试试这样子。
+关于任意的json数据，在 Go 中可以理解为 <code>map[string]interface {}</code>,或者<code>[]interface {}</code> 后者对应数组。
+
+``` Go
+func testInter(str string) {
+	var inter interface{}
+	err := json.Unmarshal([]byte(str), &inter)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	if GetInterType(inter) == "map[string]interface {}" {
+		m := inter.(map[string]interface{})
+		fmt.Println(m)
+	} else if GetInterType(inter) == "[]interface {}" {
+        //json数组
+        arrinter := inter.([]interface{})
+		for _, vv := range arrinter {
+			if GetInterType(vv) != "map[string]interface {}" {
+				continue
+			}
+			m := vv.(map[string]interface{})
+			fmt.Println("arr:", m)
+		}
+	} else {
+		fmt.Println("unknown type")
+	}
+}
+func GetInterType(inter interface{}) string {
+	aa := fmt.Sprintf("%s", reflect.TypeOf(inter))
+	return aa
+}
+func main() {
+	testInter("{\"Name\":\"hello\",\"age\":\"15\"}")
+	testInter("[{\"Name\":\"hello\",\"age\":\"15\"},{\"haha\":\"word\",\"test\":\"100\"}]")
+}
+```
+输出：
+> map[Name:hello age:15]
+	arr: map[Name:hello age:15]
+	arr: map[haha:word test:100]
+
+通过这种方式，就可以不管任何类型的数据，这里的<code>reflect.TypeOf(inter)</code>还可以判断很多数据类型。。。
+然后这里也涉及到了一小部分<code>interface</code>的用法。
+
