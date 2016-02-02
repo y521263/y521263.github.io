@@ -16,7 +16,7 @@ Go自带解析包，C++只能自己写，或者网上找库了 <code>:P</code>
 
 首先看下最基本的用法，
 
-``` Go
+``` go
 type Person struct {
 	Name string
 	Age  string
