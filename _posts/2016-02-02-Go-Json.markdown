@@ -100,7 +100,9 @@ func main() {
 输出：
 
 > map[Name:hello age:15]
+
 > arr: map[Name:hello age:15]
+
 > arr: map[haha:word test:100]
 
 通过这种方式，就可以不管任何类型的数据，这里的<code>reflect.TypeOf(inter)</code>还可以判断很多数据类型。。。
