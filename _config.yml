@@ -17,7 +17,8 @@ instagram_username: y521263
 
 
 # Build settings
-highlighter: pygments
+#highlighter: pygments
+highlighter: rouge
 permalink: pretty
 paginate: 50
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
@@ -54,7 +55,7 @@ duoshuo_share: true                     # set to false if you want to use Commen
 #ba_track_id: c3407349cc1129e07d0c33c8714b6175
 # Google Analytics
 #ga_track_id: 'UA-69471101-1'            # Format: UA-xxxxxx-xx
-ga_domain: mrfu
+ga_domain: maples
 
 
 
