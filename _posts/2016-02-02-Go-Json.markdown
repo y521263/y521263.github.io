@@ -25,13 +25,13 @@ func testPerson() {
 	str1 := "{\"Name\":\"hello\",\"Age\":\"15\"}"
 	var ret Person
 	//字符串转化为对象
-    err := json.Unmarshal([]byte(str1), &ret)
+	err := json.Unmarshal([]byte(str1), &ret)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 	fmt.Println(ret)
     
-    //数据对象转化为字符串
+	//数据对象转化为字符串
 	str2, err := json.Marshal(ret)
 	if err != nil {
 		fmt.Println(err.Error())
