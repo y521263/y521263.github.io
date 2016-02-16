@@ -106,7 +106,7 @@ KMP 主要通过预先计算的部分匹配表来加速匹配过程的移动，�
 
 ## Code
 
-```
+``` C
 vector<int> KMP(string s){
     vector<int> next(s.size());
     next[0] = 0;// 部分匹配表格 也就是上面的 value那一行，第一个字符最大前后缀长度是0
