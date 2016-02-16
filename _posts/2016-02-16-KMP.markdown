@@ -1,0 +1,127 @@
+---
+layout: post
+title:  "KMP算法(Knuth-Morris-Pratt)"
+date:   2016-02-16 10:43:16 +0800
+categories: Algorithm
+#header-img: "img/post-bg-js-module.jpg"
+tags:
+    - Algorithm
+---
+
+# KMP算法(Knuth-Morris-Pratt)
+
+KMP是一种优秀的字符串匹配算法，之前看了好多文章都没弄明白，现在说下自己的理解。
+
+首先我们最普通的字符串匹配，比如在某个字符串中寻找子串，那么一个一个移动，逐个比较。
+显然效率会比较低下。
+下面说下KMP的做法。
+
+## 部分匹配表(**The Partial Match Table**)
+
+KMP算法最关键的就是这个表了。刚开始确实很难搞明白，下面先贴出这个表。然后再解释这个表的数据。
+
+```
+char:  | a | b | a | b | a | b | c | a | 
+index: | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+value: | 0 | 0 | 1 | 2 | 3 | 4 | 0 | 1 |
+```
+
+char就是我们的匹配串。
+
+index 序号
+
+value 待会儿解释~ <code>:P</code>
+
+这里还需要引入2个概念，字符串前缀(**Proper prefix**)，字符串后缀(**Proper suffix**)
+
+比如，字符串<code>"hello"</code>，那么
+
+**Proper prefix**
+
+"h" "he" "hel" "hell"
+
+**Proper suffix**
+
+"o" "lo" "llo" "ello"
+
+很简单，不包含首尾字符的所有子串。
+
+最长的字符串前缀和字符串后缀相匹配的长度(**The length of the longest proper prefix in the (sub)pattern that matches a proper suffix in the same (sub)pattern.**)。
+
+这个名字有点长。下面来解释下。我们看下上面表格的第3个格子，对应的字符串为<code>"aba"</code>，那么有2个**Proper prefix**("a"，"ab")，有2个**Proper suffix**("a"，"ba")，那么这2组子串相互匹配上的，最大的长度就是 "a"的长度，那么对应的 **value**的值 **=1**
+
+以此类推，第4个格子，对应的字符串为<code>"abab"</code>，那么有3个**Proper prefix**("a"，"ab"，"aba")，有3个**Proper suffix**("b"，"ab"，"bab")，那么这2组子串相互匹配上的，最大的长度就是 "ab"的长度，那么对应的 **value**的值 **=2**
+
+其余的可以以此类推...
+
+## 部分匹配表的使用(**How to use the Partial Match Table**)
+
+得到这个表之后，我们可以怎么使用呢？最开始我们提到了暴力匹配法就是逐个匹配，实际上我们可以用这个表格来跳过一些不必要的匹配，提高效率。那么跳过几个字符呢。假设当前匹配了n个字符，那么可以跳过<code>n - table[n - 1]</code> 个字符。看例子。
+
+假设我们现在用匹配串<code>"abababca"</code>和主串<code>"bacbababaabcbab"</code>作匹配.
+把上面的表格也搬过来，方便查看。
+```
+char:  | a | b | a | b | a | b | c | a | 
+index: | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+value: | 0 | 0 | 1 | 2 | 3 | 4 | 0 | 1 |
+```
+第一次匹配的时候：
+
+```
+bacbababaabcbab
+ |
+ abababca
+```
+这里的最长匹配上的子串大小为1 (也就是 <code>a</code>)，查表可得，table[n - 1](此时n = 1，table[ 0 ])为0，那么不跳过任何字符。继续匹配：
+```
+bacbababaabcbab
+    |||||
+    abababca
+```
+这里的最长匹配上的子串大小为5，查表可得，table[n - 1](此时n = 5，table[ 4 ])为3
+代入上面的公式 <code>n - table[n - 1]</code>(5 - 3)，那么跳过2个字符：
+
+```
+bacbababaabcbab
+    xx|||
+      abababca
+```
+这里的最长匹配上的子串大小为3，查表可得，table[n - 1](此时n = 3，table[ 2 ])为1
+代入上面的公式 <code>n - table[n - 1]</code>(3 - 1)，那么跳过2个字符：
+
+```
+bacbababaabcbab
+      xx|
+        abababca
+```
+ok，这里的匹配串超出主串的长度了，都没匹配到，因此，结束。
+
+## 原理简述
+
+KMP 主要通过预先计算的部分匹配表来加速匹配过程的移动，可以跳过一些字符。
+那么具体的部分匹配表格计算怎么计算呢，代码如何实现，再来看下，代码很简短但是也比较难理解。
+
+
+## Code
+
+``` c++
+vector<int> KMP(string s){
+    vector<int> next(s.size());
+    next[0] = 0;// 部分匹配表格 也就是上面的 value那一行，第一个字符最大前后缀长度是0
+    int j = 0;
+    for (int i = 1; i < s.size(); i++)//从第2个字符开始计算
+    {
+        while (j >0 && s[i]!= s[j])//循环 精髓 看不懂~~~~下面解释
+            j = next[j - 1];
+        if (s[i] == s[j])
+            ++j;
+        next[i] = j;
+    }
+    return next;
+}
+```
+重点说下 while循环做的事情：
+
+1.已知前面计算最大前后缀长度为j，
+
+2.此时比较 s[j]和s[i]
