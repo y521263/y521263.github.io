@@ -60,6 +60,7 @@ value 待会儿解释~ <code>:P</code>
 
 假设我们现在用匹配串<code>"abababca"</code>和主串<code>"bacbababaabcbab"</code>作匹配.
 把上面的表格也搬过来，方便查看。
+
 ```
 char:  | a | b | a | b | a | b | c | a | 
 index: | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
@@ -73,6 +74,7 @@ bacbababaabcbab
  abababca
 ```
 这里的最长匹配上的子串大小为1 (也就是 <code>a</code>)，查表可得，table[n - 1](此时n = 1，table[ 0 ])为0，那么不跳过任何字符。继续匹配：
+
 ```
 bacbababaabcbab
     |||||
@@ -120,6 +122,7 @@ vector<int> KMP(string s){
     return next;
 }
 ```
+
 重点说下 while循环做的事情：
 
 1.已知前面计算最大前后缀长度为j，
