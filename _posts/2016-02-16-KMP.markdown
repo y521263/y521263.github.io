@@ -141,7 +141,7 @@ vector<int> KMP(string s){
 
 3.如果相等，那么跳出while循环；
 
-4.**那么不等的情况？？？** 当<code>s[i]</code>和<code>s[j]</code>不等时，其实<code>s[i-j]...s[i-1]</code>和<code>s[0]...s[j-1]</code>是相同的。这个时候我们需要找一个<code>s[0]</code>打头、<code>s[Newj - 1]</code>结尾的字串，看看它的下一项<code>s[Newj]</code>是否和<code>s[i]</code>匹配。
+4.**那么不等的情况？？？** 当<code>s[i]</code>和<code>s[j]</code>不等时，其实<code>s[i-j]...s[i-1]</code>和<code>s[0]...s[j-1]</code>是相同的。这个时候我们需要找一个<code>s[0]</code>打头、<code>s[Newj - 1]</code>结尾的子串，看看它的下一项<code>s[Newj]</code>是否和<code>s[i]</code>匹配。为什么是<code>s[0]</code>打头？求<code>next[j]</code>，就是求最大相同子串，所以是<code>s[0]</code>打头，都快忘了为什么出发了<code>:P</code>
 
 那么Newj(更新后的j，避免混乱取个新的名字)值是什么，怎么来确定？看表2
 
