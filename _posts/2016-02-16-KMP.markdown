@@ -155,4 +155,7 @@ s[0] ... | s[i-j] ... s[i-1] | s[i] ...
 对应代码里的while循环不相等情况下<code>j = next[j - 1];</code>，然后就是重复 2，3 步骤了
 
 
+## 参考
+http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/
 
+http://www.cnblogs.com/c-cloud/p/3224788.html
