@@ -173,6 +173,6 @@ s[0] ... | s[i-j] ... s[i-1] | s[i] ...
 
 
 ## 参考
-[jakeboxer](http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/) 写的很详细，不过没有代码
+[jakeboxer](http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/) 我见过的，写的最详细，简单的，看不懂我写的可以看这个。<code>^_^</code>
 
 [http://www.cnblogs.com/c-cloud/p/3224788.html](http://www.cnblogs.com/c-cloud/p/3224788.html) 写的也很详细，图画的很清楚
