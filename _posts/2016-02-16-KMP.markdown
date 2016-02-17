@@ -27,22 +27,16 @@ value: | 0 | 0 | 1 | 2 | 3 | 4 | 0 | 1 |
 ```
 
 char就是我们的匹配串。
-
 index 序号
-
 value 待会儿解释~ <code>:P</code>
 
 这里还需要引入2个概念，字符串前缀(**Proper prefix**)，字符串后缀(**Proper suffix**)
 
 比如，字符串<code>"hello"</code>，那么
-
 **Proper prefix**
-
-"h" "he" "hel" "hell"
-
+<code>"h" "he" "hel" "hell"</code>
 **Proper suffix**
-
-"o" "lo" "llo" "ello"
+<code>"o" "lo" "llo" "ello"</code>
 
 很简单，不包含首尾字符的所有子串。
 
@@ -73,14 +67,14 @@ bacbababaabcbab
  |
  abababca
 ```
-这里的最长匹配上的子串大小为1 (也就是 <code>a</code>)，查表可得，table[n - 1](此时n = 1，table[ 0 ])为0，那么不跳过任何字符。继续匹配：
+这里的最长匹配上的子串大小为1 (也就是 <code>a</code>)，查表可得，<code>table[n - 1]</code> (此时n = 1，table[ 0 ])为0，那么不跳过任何字符。继续匹配：
 
 ```
 bacbababaabcbab
     |||||
     abababca
 ```
-这里的最长匹配上的子串大小为5，查表可得，table[n - 1](此时n = 5，table[ 4 ])为3
+这里的最长匹配上的子串大小为5，查表可得，<code>table[n - 1]</code>(此时n = 5，table[ 4 ])为3
 代入上面的公式 <code>n - table[n - 1]</code>(5 - 3)，那么跳过2个字符：
 
 ```
@@ -88,7 +82,7 @@ bacbababaabcbab
     xx|||
       abababca
 ```
-这里的最长匹配上的子串大小为3，查表可得，table[n - 1](此时n = 3，table[ 2 ])为1
+这里的最长匹配上的子串大小为3，查表可得，<code>table[n - 1]</code>(此时n = 3，table[ 2 ])为1
 代入上面的公式 <code>n - table[n - 1]</code>(3 - 1)，那么跳过2个字符：
 
 ```
@@ -113,7 +107,7 @@ vector<int> KMP(string s){
     int j = 0;
     for (int i = 1; i < s.size(); i++)//从第2个字符开始计算
     {
-        while (j >0 && s[i]!= s[j])//循环 精髓 看不懂 下面解释
+        while (j >0 && s[i]!= s[j])//循环 很关键，很难理解 下面解释
             j = next[j - 1];
         if (s[i] == s[j])
             ++j;
@@ -127,4 +121,38 @@ vector<int> KMP(string s){
 
 1.已知前面计算最大前后缀长度为j，
 
-2.此时比较 s[j]和s[i]
+2.此时比较 s[j]和s[i]，如表1
+
+3.如果相等，那么跳出while循环；
+
+4.**那么不等的情况？？？** 当s[i]和s[j]不等时，其实 s[i-j]...s[i-1] 和s[0]...s[j-1]是相同的。这个时候我们需要找一个 s[0]打头、s[Newj - 1]结尾的字串，看看它的下一项s[Newj]是否和s[i]匹配。
+
+那么Newj(更新后的j，避免混乱取个新的名字)值是什么，怎么来确定？看表2
+
+表1
+
+```
+s[0] ... | s[i-j] ... s[i-1] | s[i] ...
+                              =
+         | s[0]   ... s[j-1] | s[j]
+		 | ..这一段是相同的..|
+```
+
+表2
+
+```
+s[0] ... | s[i-j] ... s[i-1] | s[i] ...
+                               !=
+         | s[0]   ... s[j-1] | s[j]
+		 
+		 |  s[0]...s[Newj-1] | s[Newj]
+```
+
+看表2的<code>s[0]...s[Newj-1]</code>,**其实是<code>s[0]...s[j-1]</code>的后缀部分，同时也是整个s串的前缀部分。**
+也就是说<code>s[0]...s[Newj-1]</code>是<code>s[0]...s[j-1]</code>的最大相同前后缀，那么长度就是<code>next[j-1]</code>
+**最终得出很关键的一步**
+**Newj=next[j-1]**
+对应代码里的while循环不相等情况下<code>j = next[j - 1];</code>，然后就是重复 2，3 步骤了
+
+
+
