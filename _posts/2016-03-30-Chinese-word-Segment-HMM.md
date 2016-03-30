@@ -6,8 +6,7 @@ categories: Algorithm
 #header-img: "img/post-bg-js-module.jpg"
 tags:
 - Algorithm 
-- 中文分词 
-— HMM
+- 中文分词
 ---
 
 
