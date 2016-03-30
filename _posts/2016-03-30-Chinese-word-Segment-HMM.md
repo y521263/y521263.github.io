@@ -251,6 +251,8 @@ void Viterbe(std::vector<uint32_t>& words, std::vector<size_t>& ret)
 #### 参考
 [浅谈中文分词](http://www.isnowfy.com/introduction-to-chinese-segmentation/)
 
+[HMM模型抓赌场老千](http://zhihu.com/question/20962240/answer/33561657)
+
 [HMM相关文章索引](http://www.52nlp.cn/hmm%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0%E7%B4%A2%E5%BC%95)
 
 [中文分词之HMM模型详解](http://www.yanyiwu.com/work/2014/04/07/hmm-segment-xiangjie.html)
