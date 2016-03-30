@@ -5,9 +5,10 @@ date:   2016-03-30 10:43:16 +0800
 categories: Algorithm
 #header-img: "img/post-bg-js-module.jpg"
 tags:
-- Algorithm 
-- 中文分词 
-— HMM
+	- Algorithm 
+	- 中文分词 
+	— HMM
+
 ---
 
 中文分词－HMM模型
