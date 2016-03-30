@@ -5,12 +5,12 @@ date:   2016-03-30 10:43:16 +0800
 categories: Algorithm
 #header-img: "img/post-bg-js-module.jpg"
 tags:
-	- Algorithm 
-	- 中文分词 
-	— HMM
+- Algorithm 
+- 中文分词 
+— HMM
 ---
 
-中文分词－HMM模型
+### 中文分词－HMM模型
 
 关于HMM模型的文章和资料有很多，各种公式推导看起来也是有点复杂。不过还是那句话，多看看～～～
 
