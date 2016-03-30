@@ -5,8 +5,9 @@ date:   2016-03-30 10:43:16 +0800
 categories: Algorithm
 #header-img: "img/post-bg-js-module.jpg"
 tags:
-- Algorithm 
-- 中文分词
+    - 前端开发
+    - JavaScript
+    - 译文
 ---
 
 
