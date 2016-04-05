@@ -199,7 +199,7 @@ void Viterbe(std::vector<uint32_t>& words, std::vector<size_t>& ret)
     for (int i=1; i<words.size(); i++) {
         for (int j=0; j<4; j++) {
             weight[j][i] = -INT64_MAX;
-            path[j][i]=-1;
+            path[j][i]=3;
             for (int k=0; k<4; k++) {
                 //前面一个字的状态概率＋状态转移概率＋发射矩阵概率
                 //因为取对数 所以 ＋
