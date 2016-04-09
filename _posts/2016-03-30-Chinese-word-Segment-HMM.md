@@ -246,7 +246,7 @@ void Viterbe(std::vector<uint32_t>& words, std::vector<size_t>& ret)
 利用msr_training.utf8训练出**InitStatusSet**，**TransProbMatrix**，**EmitProbMatrix**；
 
 然后利用**Viterbi**算法进行分词。
-见代码实现[HMMSeg](https://github.com/y521263/HMMSeg)Demo.
+见代码实现[HMMSeg](https://github.com/y521263/AlgorithmSet)Demo.
 
 #### 参考
 [浅谈中文分词](http://www.isnowfy.com/introduction-to-chinese-segmentation/)
