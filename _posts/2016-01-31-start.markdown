@@ -1,7 +1,27 @@
 ---
 layout: post
-title:  "new Blog"
+title:  "2015年之前的博客"
 date:   2016-01-31 13:43:16 +0800
-categories: jekyll update
+categories: life
 ---
-new blog
+
+之前使用csdn的博客，后来有一段时间，因为老被盗号，经常导致我登录不了。于是乎，就想着自己建站了。
+
+之前的文章主要是关于 Hadoop，机器学习，C++.
+
+[Hadoop](http://blog.csdn.net/maple1149/article/category/2126975)
+
+[机器学习-Kaggle竞赛-Titanic](http://blog.csdn.net/y521263/article/details/46940607)
+
+[机器学习-Kaggle竞赛-Digit recognizer](http://blog.csdn.net/y521263/article/details/46753765)
+
+[机器学习实战-PCA主成分分析、降维](http://blog.csdn.net/y521263/article/details/44925363)
+
+[机器学习实战-朴素贝叶斯算法](http://blog.csdn.net/y521263/article/details/44852685)
+
+[机器学习实战-决策树](http://blog.csdn.net/y521263/article/details/44829629)
+
+[机器学习实战-k近邻算法](http://blog.csdn.net/y521263/article/details/44781335)
+
+[机器学习实战-Logistic回归](http://blog.csdn.net/y521263/article/details/44686755)
+
