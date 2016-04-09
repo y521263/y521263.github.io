@@ -66,7 +66,7 @@ KMP算法是单模式的字符匹配算法，AC自动机是多模式串的字符
 
 [盗个图~😄](http://blog.csdn.net/niushuai666/article/details/7002823)
 
-![Trie_Fail](https://github.com/y521263/y521263.github.io/tree/master/img/article/ac_Trie_Fail.png)
+![Trie_Fail](https://raw.githubusercontent.com/y521263/y521263.github.io/master/img/article/ac_Trie_Fail.png)
 
 ``` c++
 void TrieTree::setFail()
