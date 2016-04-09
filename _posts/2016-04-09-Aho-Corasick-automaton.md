@@ -130,6 +130,8 @@ void TrieTree::query(std::string& s,std::set<std::string>& ret)
 
 ```
 
+[代码](https://github.com/y521263/AlgorithmSet/tree/master/ACautomaton)
+
 #### 参考
 
 [AC自动机总结](http://blog.csdn.net/mobius_strip/article/details/22549517)
