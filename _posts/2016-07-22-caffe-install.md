@@ -13,14 +13,14 @@ tags:
 
 Mac 10.11.2
 
-###更新brew
+### 更新brew
 
 ```
 brew update 
 brew upgrade
 ```
 
-###安装依赖
+### 安装依赖
 
 ```
 brew install -vd snappy leveldb gflags glog szip lmdb
@@ -29,7 +29,7 @@ brew tap homebrew/science
 brew install hdf5 opencv
 ```
 
-###修改配置
+### 修改配置
 
 ```
 brew edit opencv
@@ -59,7 +59,7 @@ brew install --build-from-source -vd boost boost-python
 brew install protobuf boost
 ```
 
-###编译
+### 编译
 
 ```
 cp Makefile.config.example Makefile.config
@@ -79,7 +79,7 @@ make runtest
 ok 以上make没有报错就好了。
 ps:官方文档仅供参考。有点古老了。
 
-###参考
+### 参考
 
 [http://caffe.berkeleyvision.org/](http://caffe.berkeleyvision.org/)
 
