@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python tornado multiprocess multithreading"
+title:  "Python tornado multiprocess multithreading"
 date:   2017-04-16 10:43:16 +0800
 categories: Python
 #header-img: "img/post-bg-js-module.jpg"
@@ -9,7 +9,6 @@ tags:
     - tornado 
 ---
 
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 ## tornado
 
