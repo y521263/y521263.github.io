@@ -120,6 +120,16 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
+
+                            {% if site.email_username %}
+                            <li>
+                                <a href="mailto:linxiangshu@126.com" class="button is-white">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-lg fa-envelope-o" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
                             {% if site.github_username %}
                             <li>
                                 <a target="_blank" href="https://github.com/{{ site.github_username }}">
