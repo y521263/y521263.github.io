@@ -11,52 +11,36 @@ header-img: "img/home-bg.jpg"
     </blockquote>
 
 	<p><strong>爱好</strong></p>
-	看书，各种杂书<br>
-	羽毛球～～～<br>
+	阅读<br>
+	羽毛球<br>
 	...</p>
 	
 	<!-- <p><strong>约么？</strong></p> -->
     <p><a href="mailto:linxiangshu@126.com?subject=Hello%20again">linxiangshu[AT]126.com</a><br>
     <a href="https://github.com/y521263">Github</a><br>
-	<a href="https://www.zhihu.com/people/maple-41-72">知乎</a><br>
     <a href="https://instagram.com/y521263/">Instagram</a><br>
     <a href="http://blog.csdn.net/y521263">CSDN(以前的blog)</a><br>
 	</p>
 </div>
 
-<!--
-{% if site.duoshuo_username %}
-    <div class="comment">
-        <div class="ds-thread"
-        {% if site.duoshuo_username == "huxblog" %}
-            data-thread-id="1187623191091085319"
-        {% else %}
-            data-thread-key="{{site.duoshuo_username}}/about"
-        {% endif %}
+<div id="disqus_thread"></div>
+<script>
 
-        data-title="{{page.title}}"
-        data-url="{{site.url}}/about/"></div>
-    </div>
-
-
-<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
--->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<!--
-<script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = document.getElementById('dsUser').value;
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://maples-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
 </script>
-<script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-{% endif %}
--->
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
