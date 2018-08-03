@@ -23,7 +23,7 @@ tags:
 首先来看下Tensorflow里[RNN](https://github.com/tensorflow/tensorflow/blob/be3d22844025e42e177a21479f3ae73bc5351c1f/tensorflow/python/ops/rnn_cell_impl.py#L333)的实现。
 
 
-``` Python
+``` python
 
 @tf_export("nn.rnn_cell.BasicRNNCell")
 class BasicRNNCell(LayerRNNCell):
