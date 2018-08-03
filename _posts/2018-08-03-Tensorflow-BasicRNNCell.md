@@ -146,3 +146,6 @@ LSTM的参数数量，RNN的基础上再乘以4，也就是3个门以及tanh lay
 3、[https://www.quora.com/What-is-the-meaning-of-%E2%80%9CThe-number-of-units-in-the-LSTM-cell](https://www.quora.com/What-is-the-meaning-of-%E2%80%9CThe-number-of-units-in-the-LSTM-cell)
 
 4、[https://www.knowledgemapper.com/knowmap/knowbook/jasdeepchhabra94@gmail.comUnderstandingLSTMinTensorflow(MNISTdataset)](https://www.knowledgemapper.com/knowmap/knowbook/jasdeepchhabra94@gmail.comUnderstandingLSTMinTensorflow(MNISTdataset))
+
+5、[https://stackoverflow.com/questions/37901047/what-is-num-units-in-tensorflow-basiclstmcell](https://stackoverflow.com/questions/37901047/what-is-num-units-in-tensorflow-basiclstmcell)
+
