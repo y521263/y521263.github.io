@@ -261,18 +261,15 @@ encoder_outputs, encoder_state = rnn.static_rnn(
 
 ``` python
 def attention_decoder(decoder_inputs,
-                      initial_state,
-                      attention_states,
-                      cell,
-                      output_size=None,
-                      num_heads=1,
-                      loop_function=None,
-                      dtype=None,
-                      scope=None,
-                      initial_state_attention=False):
-    ...
-
-
+    initial_state,
+    attention_states,
+    cell,
+    output_size=None,
+    num_heads=1,
+    loop_function=None,
+    dtype=None,
+    scope=None,
+    initial_state_attention=False):
 ```
 
 **initial_state**：也就是之前encode输出的encoder_state
