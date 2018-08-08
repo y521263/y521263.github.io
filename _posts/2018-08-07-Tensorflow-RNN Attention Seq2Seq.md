@@ -270,7 +270,7 @@ def attention_decoder(decoder_inputs,
                       dtype=None,
                       scope=None,
                       initial_state_attention=False):
-...
+
 ```
 
 **initial_state**：也就是之前encode输出的encoder_state
@@ -284,7 +284,7 @@ def attention_decoder(decoder_inputs,
 
 
 ``` python
-...
+
 # To calculate W1 * h_t we use a 1-by-1 convolution, need to reshape before.
     hidden = array_ops.reshape(attention_states,
                                [-1, attn_length, 1, attn_size])
