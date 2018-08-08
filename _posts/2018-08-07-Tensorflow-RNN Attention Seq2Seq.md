@@ -270,6 +270,7 @@ def attention_decoder(decoder_inputs,
     dtype=None,
     scope=None,
     initial_state_attention=False):
+    ...
 ```
 
 **initial_state**：也就是之前encode输出的encoder_state
