@@ -258,6 +258,7 @@ encoder_outputs, encoder_state = rnn.static_rnn(
 ```
 **decoder**阶段，重点看```attention_decoder```
 
+
 ``` python
 def attention_decoder(decoder_inputs,
                       initial_state,
@@ -269,7 +270,7 @@ def attention_decoder(decoder_inputs,
                       dtype=None,
                       scope=None,
                       initial_state_attention=False):
-  ...
+...
 ```
 
 **initial_state**：也就是之前encode输出的encoder_state
@@ -279,6 +280,7 @@ def attention_decoder(decoder_inputs,
 结合论文里的公式，尝试理解下代码。
 
 ![](/img/article/2018-08-07-2.png)
+
 
 
 ``` python
