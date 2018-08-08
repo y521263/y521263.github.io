@@ -283,7 +283,7 @@ def attention_decoder(decoder_inputs,
 
 
 ``` python
-    # To calculate W1 * h_t we use a 1-by-1 convolution, need to reshape before.
+# To calculate W1 * h_t we use a 1-by-1 convolution, need to reshape before.
     hidden = array_ops.reshape(attention_states,
                                [-1, attn_length, 1, attn_size])
     hidden_features = []
@@ -345,6 +345,7 @@ d = math_ops.reduce_sum(
 得到attention部分，再加上decode_input
 
 ``` python
+...
       inputs = [inp] + attns
       inputs = [math_ops.cast(e, dtype) for e in inputs]
       x = Linear(inputs, input_size, True)(inputs)
