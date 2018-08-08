@@ -271,6 +271,7 @@ def attention_decoder(decoder_inputs,
                       initial_state_attention=False):
   ...
 ```
+
 **initial_state**：也就是之前encode输出的encoder_state
 
 **attention_states**：之前encode输出的encoder_outputs，也就是RNN的中间输出结果。
@@ -297,6 +298,7 @@ def attention_decoder(decoder_inputs,
           variable_scope.get_variable(
               "AttnV_%d" % a, [attention_vec_size], dtype=dtype))
 ```
+
 
 这里是计算W1 * ht。这里参数```num_heads```表示多组weight set，默认是1。计算attention的时候，可以用多组weight。
 
