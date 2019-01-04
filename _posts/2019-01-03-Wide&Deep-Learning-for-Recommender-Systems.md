@@ -97,6 +97,3 @@ $$P(Y=1|x)=(w^T_{wide}[x,\phi(x)]+w^T_{deep}a^{(l_f)}+b)$$
 ### 参考
 
 1、[Wide & Deep Learning for Recommender Systems](https://arxiv.org/pdf/1606.07792.pdf)
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
