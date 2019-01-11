@@ -19,7 +19,7 @@ YouTube 视频推荐论文。
 
 ### SYSTEM OVERVIEW
 
-![](../img/article/2019/2019-01-10-1.png)
+![](/img/article/2019/2019-01-10-1.png)
 
 
 * candidate generation network
@@ -40,7 +40,7 @@ YouTube 视频推荐论文。
 受词向量思想的启发，作者把用户的视频浏览记录作为一个序列；好比一篇小短文，每个视频就是一个单词，以此来训练视频的 vector。将用户看过的视频向量，做个简单的average，效果也很不错；可以看下图，具体的**candidate generation**的网络结构
 
 
-![](../img/article/2019/2019-01-10-2.png)
+![](/img/article/2019/2019-01-10-2.png)
 
 
 搜索记录也是类似的处理方式，转化为向量；
@@ -55,7 +55,7 @@ YouTube 视频推荐论文。
 在产生候选集之后，就是ranking部分；
 在考虑特征的时候，着重考虑视频自身的特征，以及和用户的相关性特征；
 先看下具体的网络结构
-![](../img/article/2019/2019-01-10-3.png)
+![](/img/article/2019/2019-01-10-3.png)
 
 这里很大篇幅讲到了特征工程部分；比如Categorical 特征，作者会做一个Embedding，比如性别，地区；而连续的特征通常是Normalizing；关于这一块也是漫游参考意义的。
 
