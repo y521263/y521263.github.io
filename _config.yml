@@ -61,7 +61,7 @@ ga_domain: maples
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "低调 | 阅读 羽毛球 跑步 算法 MachineLearning DeepLearning"
+sidebar-about-description: "投资 阅读 羽毛球 跑步 算法 "
 sidebar-avatar: /img/maple-tx.png     # use absolute URL.
 
 
